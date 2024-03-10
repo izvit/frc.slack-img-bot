@@ -1,0 +1,10 @@
+channels:
+  - defaults
+dependencies:
+  - python=3.12
+  - flask
+  - pip
+  - pip:
+      - slack_sdk
+      - slack_bolt
+      - requests
