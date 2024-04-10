@@ -29,7 +29,7 @@ verbosity = 1
 parser = argparse.ArgumentParser(
             prog='ScoutImageBot',
             description='Slack bot to collect robot images from pit scouting')
-parser.add_argument("-e", "--event", type=str, default="frc", 
+parser.add_argument("-e", "--event", type=str, default=0, 
                     help='Event name')
 parser.add_argument("-d", "--dst_path", type=str, default="./data", 
                     help='Path to where to save data')
@@ -60,6 +60,9 @@ if not data_path.exists() or not data_path.is_dir():
     logging.error(f"The destination directory doesn't exist[{str(data_path)}]")
     sys.exit(1)
 
+if frcEventName==0:
+    logging.error("Please enter an event name (python ./bot.py -e event name)")
+    sys.exit(1)
 #-----------------------
 #--- Helper
 #-----------------------
