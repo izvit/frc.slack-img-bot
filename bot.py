@@ -30,7 +30,7 @@ parser = argparse.ArgumentParser(
             prog='ScoutImageBot',
             description='Slack bot to collect robot images from pit scouting')
 parser.add_argument("-e", "--event", type=str, default="frc", 
-                    help='Event name')
+                    help='Event name', required=True)
 parser.add_argument("-d", "--dst_path", type=str, default="./data", 
                     help='Path to where to save data')
 parser.add_argument("-b", "--bot_token_path", type=str, default="./.slack_token", 
